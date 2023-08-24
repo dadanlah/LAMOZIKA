@@ -8,7 +8,8 @@ import PopularJobCard from '../../common/cards/popular/PopularJobCard';
 import axios from 'axios';
 
 const Popularjobs = () => {
-  const router = useRouter();
+  
+
   const [datas, setDatas] = useState();
   const [isLoading,setIsLoading] = useState(true);
   const [error, setError] = useState();
@@ -24,6 +25,8 @@ const Popularjobs = () => {
         console.log(err);
     })
 },[]);
+
+
 
 
 

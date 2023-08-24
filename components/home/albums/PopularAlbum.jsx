@@ -6,13 +6,14 @@ import { useRouter } from 'expo-router'
 import styles from "./PopularAlbum.style";
 import {COLORS, SIZES } from '../../../constants';
 import axios from 'axios';
-
+import { useNavigation } from "@react-navigation/native";
 import AlbumCard from '../../common/cards/PopularAlbum/AlbumCard';
 
 
 const PopularAlbum = () =>{
 
-    const router = useRouter();
+  const navigation = useNavigation();
+    
     const [datas, setDatas] = useState();
     const [isLoading,setIsLoading] = useState(true);
     const [error, setError] = useState();

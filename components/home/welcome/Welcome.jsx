@@ -7,15 +7,17 @@ import {
   Image,
   FlatList
 } from 'react-native';
+
 import { useRouter } from 'expo-router';
 
 import styles from './welcome.style';
 import {icons, SIZES } from '../../../constants';
+import { useNavigation } from '@react-navigation/native';
 
 const songGenders = ["RAP","DRILL", "ALTERNATIVE"];
 
 const Welcome = () => {
-  const router = useRouter();
+  const navigation = useNavigation(); 
   const [activeSongGender, setActiveSongGender] = useState('RAP')
 
   return (
@@ -29,8 +31,8 @@ const Welcome = () => {
         <View style={styles.searchWrapper} >
         <TextInput 
           style={styles.searchInput}
-          value=""
-          onChange={() => {}}
+          // value=""
+          // onChange={() => {}}
           placeholder="  what you wanna listen to "
         >
         </TextInput>

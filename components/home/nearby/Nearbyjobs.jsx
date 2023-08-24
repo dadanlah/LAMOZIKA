@@ -6,9 +6,18 @@ import styles from './nearbyjobs.style'
 import {COLORS} from '../../../constants';
 import NearbyJobCard from '../../common/cards/nearby/NearbyJobCard';
 import axios from 'axios';
+import { useNavigation } from '@react-navigation/native';
+
 
 const Nearbyjobs = () => {
-  const router = useRouter();
+  
+  const navigation = useNavigation();
+
+  const handleNavigation = (name) => {
+    navigation.navigate(name);
+  }
+
+    
   const [datas, setDatas] = useState();
   const [isLoading,setIsLoading] = useState(true);
   const [error, setError] = useState();
@@ -47,9 +56,13 @@ const Nearbyjobs = () => {
           <Text>Something went wrong</Text>
         ) : (
           datas?.map((song) => (
-            <NearbyJobCard
+            <TouchableOpacity 
+              onPress={()=> handleNavigation("Player") }
+            >
+              <NearbyJobCard
               song={song}
-            />
+            /></TouchableOpacity>
+            
           ) ) 
         )}
       </View>
